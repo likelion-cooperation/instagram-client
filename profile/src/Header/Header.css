@@ -1,3 +1,34 @@
+.Header {
+    color: black;
+}
+
 .profileImage {
     border-radius: 50%;
+    width: 150px;
+    height: 150px;
+
+}
+
+.editButton {
+    background-color: rgb(240, 240, 240);
+    border: 0px;
+    border-radius: 5px;
+}
+
+.editButton:hover {
+    background-color: rgb(200, 200, 200);
+}
+
+.headInformationContainer div div {
+    margin-bottom: 10px;
+}
+
+.headInformationContainer a{
+    color: rgb(16, 30, 41);
+    text-decoration: none;
+}
+
+.settingButton {
+    background-color: white;
+    border: 0;
 }
