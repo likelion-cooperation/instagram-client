@@ -28,6 +28,10 @@
     text-decoration: none;
 }
 
+.headInformationContainer a:hover{
+    text-decoration: underline;
+}
+
 .settingButton {
     background-color: white;
     border: 0;

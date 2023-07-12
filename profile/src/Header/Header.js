@@ -4,6 +4,15 @@ import './Header.css';
 
 
 const Header = () => {
+    const User = {
+        NickName: 'ldk._.kdl',
+        ArticleCount: '29',
+        FollowersCount: '152',
+        FollowsCount: '212',
+        Name: '이동규',
+        Link: 'https://sooncoding.tistory.com/m/',
+    };
+
     return (
         <>
             {/* 헤더 컨테이너 */}
@@ -19,7 +28,7 @@ const Header = () => {
                     <div className="col-6 headInformationContainer ">
                         {/* 2열 1행 */}
                         <div className='row justify-content-start'>
-                            <div className='col-3 fs-5'>ldk._.kdl</div>
+                            <div className='col-3 fs-5'>{User.NickName}</div>
                             <div className='col-3'><button className='editButton fw-semibold px-4 py-1'>프로필 편집</button></div>
                             <div className='col-3 fs-5'>
                                 <button className='settingButton'>
@@ -32,13 +41,13 @@ const Header = () => {
 
                             <div className='w-100'></div>
                             {/* 2열 2행 */}
-                            <div className='col-3'>게시물 <span className='fw-semibold'>29</span></div>
-                            <div className='col-3'>팔로워 <span className='fw-semibold'>152</span></div>
-                            <div className='col-3'>팔로우 <span className='fw-semibold'>212</span></div>
+                            <div className='col-3'>게시물 <span className='fw-semibold'>{User.ArticleCount}</span></div>
+                            <div className='col-3'>팔로워 <span className='fw-semibold'>{User.FollowersCount}</span></div>
+                            <div className='col-3'>팔로우 <span className='fw-semibold'>{User.FollowsCount}</span></div>
 
                             <div className='w-100'></div>
                             {/* 2열 3행 */}
-                            <div className='col'><span className='fw-semibold'>이동규</span><br /><a href='https://www.instagram.com/ldk._.kdl/'>sooncoding.tistory.com</a></div>
+                            <div className='col'><span className='fw-semibold'>{User.Name}</span><br /><a href={User.Link} target='_blank'>sooncoding.tistory.com</a></div>
 
 
                         </div>
