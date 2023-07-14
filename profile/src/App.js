@@ -1,14 +1,14 @@
 import './App.css';
-import Header from './Header/Header';
-import ArticleContainer from './Article/ArticleContainer';
-
+// import Header from './Header/Header';
+// import ArticleContainer from './Article/ArticleContainer';
+import Profile from './Profile/Profile';
+import SideBar from './SideBar/SideBar';
 
 function App() {
   return (
     <div className="App">
-      <Header></Header>
-      <ArticleContainer>
-      </ArticleContainer>
+      <SideBar />
+      <Profile />
     </div>
   );
 }

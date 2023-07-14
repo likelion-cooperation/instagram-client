@@ -47,7 +47,7 @@ const Header = () => {
 
                             <div className='w-100'></div>
                             {/* 2열 3행 */}
-                            <div className='col'><span className='fw-semibold'>{User.Name}</span><br /><a href={User.Link} target='_blank'>sooncoding.tistory.com</a></div>
+                            <div className='col'><span className='fw-semibold'>{User.Name}</span><br /><a href={User.Link} target='blank'>sooncoding.tistory.com</a></div>
 
 
                         </div>
