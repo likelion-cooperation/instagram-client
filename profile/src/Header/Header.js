@@ -29,11 +29,9 @@ const Header = () => {
                     <div className="col-6 headInformationContainer       ">
                         {/* 2열 1행 */}
                         <div className='row justify-content-start'>
-                            {/* <div className='col-3 fs-5' style={{marginTop:'10px'}}>{User.NickName}</div> */}
-                            <div className='col-3 fs-5'>{User.NickName}</div>
+                            <div className='col-3 fs-5' style={{marginTop:'10px'}}>{User.NickName}</div>
                             {/* <div className='col-3'><button className='editButton fw-semibold px-4 py-1'>프로필 편집</button></div> */}
-                            {/* <div className='col-3 fs-5' style={{paddingLeft:'0px'}}><BasicModal/></div> */}
-                            <div className='col-3 fs-5'><BasicModal/></div>
+                            <div className='col-3 fs-5' style={{paddingLeft:'0px'}}><BasicModal/></div>
                             <div className='col-3 fs-5'>
                                 <button className='settingButton'>
                                     <svg xmlns="http://www.w3.org/2000/svg" widt  h="30" height="30" fill="currentColor" class="bi bi-gear" viewBox="0 0 16 16">
