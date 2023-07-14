@@ -5,10 +5,10 @@ import Article from '../Article/ArticleContainer'
 const Profile = () => {
     return (
         <>
-            {/* <div style={{marginLeft:"100px"}}> */}
+            <div style={{marginLeft:"100px"}}>
                 <Header />
                 <Article />
-            {/* </div> */}
+            </div>
         </>
     );
 };
