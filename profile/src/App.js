@@ -1,14 +1,16 @@
 import './App.css';
-// import Header from './Header/Header';
-// import ArticleContainer from './Article/ArticleContainer';
 import Profile from './Profile/Profile';
-import SideBar from './SideBar/SideBar';
+import ProfileEdit from './Header/ProfileEdit'
+import { Route, Routes } from 'react-router-dom';
+
 
 function App() {
   return (
     <div className="App">
-      <SideBar />
-      <Profile />
+      <Routes>
+        <Route path="/" element={<Profile />} />
+        <Route path="/ProfileEdit" element={<ProfileEdit />} />
+      </Routes>
     </div>
   );
 }
