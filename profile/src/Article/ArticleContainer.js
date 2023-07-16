@@ -4,6 +4,7 @@ import ArticleRow from './ArticleRow';
 import I1Src from './logo.jpg'
 
 const ArticleContainer = () => {
+    // Article 정보
     const ArticleSrc =
     {
         row1: {
@@ -23,7 +24,7 @@ const ArticleContainer = () => {
         },
     };
 
-
+    // 렌더링
     return (
         <>
             <div className='ArticleContainer container text-center'>
