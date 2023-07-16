@@ -4,8 +4,8 @@ const ItemContainer = ({name, content}) => {
     return (
         <div>
             <div className='row'>
-                <div className='col fw-bold fs-4 text-end me-3'>{name}</div>
-                <div className='col text-start'>{content}</div>
+                <div className='col-3 fs-5 fw-bold text-end me-3'>{name}</div>
+                <div className='col-7 text-start mb-3'>{content}</div>
             </div>
         </div>
     );
