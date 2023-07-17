@@ -66,7 +66,6 @@ const ProfileEdit = () => {
         webSite: [<WebSiteInput className='w-100' type='text' placeholder='웹사이트' disabled></WebSiteInput>, <br />, <ExplanationText>링크 수정은 모바일에서만 가능합니다. Instagram 앱으로 이동하여 프로필의 소개에서 웹사이트를 변경하여 수정하세요.</ExplanationText>],
         introduction: [<IntroductionInputArea className='w-100' onChange={onInputHandler} maxLength="150" ></IntroductionInputArea>, inputCount, '/150'],
         gender: [<input className='w-100' type='text' value='남성'></input>, <ExplanationText>이 정보는 공개 프로필에 포함되지 않습니다.</ExplanationText>],
-        recommendations: [<input type='checkbox'></input>, <span className='fw-bold fs-5'> 사람들이 회원님의 프로필에서 비슷한 계정 추천을 볼 수 있는지와 회원님의 계정이 다른 프로필에서 추천될 수 있는지를 선택하세요.</span>],
     };
 
     /* Rendering */
@@ -82,7 +81,6 @@ const ProfileEdit = () => {
                 <ItemContainer name='웹사이트' content={contents.webSite}></ItemContainer>
                 <ItemContainer name='소개' content={contents.introduction}></ItemContainer>
                 <ItemContainer name='성별' content={contents.gender}></ItemContainer>
-                <ItemContainer name='프로필에 계정 추천 표시' content={contents.recommendations}></ItemContainer>
             </GridContainer>
         </>
     );
