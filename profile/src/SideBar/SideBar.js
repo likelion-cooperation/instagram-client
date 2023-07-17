@@ -14,7 +14,7 @@ import HomeIcon from '@mui/icons-material/Home';
 import styled from 'styled-components';
 import TestProfileImage from '../Header/TestProfileImage.jpg'
 import AddArticle from './AddArticle';
-
+import { Link } from 'react-router-dom';
 
 const drawerWidth = 60;
 
@@ -56,8 +56,8 @@ export default function SideBar() {
                             <ListItem key={text} disablePadding>
                                 <ListItemButton>
                                     <ListItemIcon style={{color : "black"}}>
-                                        {index === 0 && <InstagramIcon />}
-                                        {index === 1 && <HomeIcon />}
+                                        {index === 0 && <Link to='/Feed'><InstagramIcon style={{color:'black'}}/></Link>}
+                                        {index === 1 && <Link to='/Feed'><HomeIcon style={{color:'black'}}/></Link>}
                                         {index === 2 && <AddArticle />}
                                         {index === 3 && <StyledImage src={TestProfileImage} />}
     
