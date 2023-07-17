@@ -9,11 +9,11 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import HomeIcon from '@mui/icons-material/Home';
 import InstagramIcon from '@mui/icons-material/Instagram';
-import LibraryAddIcon from '@mui/icons-material/LibraryAdd';
+import HomeIcon from '@mui/icons-material/Home';
 import styled from 'styled-components';
 import TestProfileImage from '../Header/TestProfileImage.jpg'
+import AddArticle from './AddArticle';
 
 
 const drawerWidth = 60;
@@ -27,7 +27,6 @@ const StyledImage = styled.img`
     top : 16px;
     left : 12px;
 `;
-
 
 
 export default function SideBar() {
@@ -59,7 +58,7 @@ export default function SideBar() {
                                     <ListItemIcon style={{color : "black"}}>
                                         {index === 0 && <InstagramIcon />}
                                         {index === 1 && <HomeIcon />}
-                                        {index === 2 && <LibraryAddIcon />}
+                                        {index === 2 && <AddArticle />}
                                         {index === 3 && <StyledImage src={TestProfileImage} />}
     
                                     </ListItemIcon>
