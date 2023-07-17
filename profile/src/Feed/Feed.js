@@ -4,6 +4,7 @@ import message from "./img/message.png"
 import direct from "./img/direct.png"
 import test from "./img/icon.png"
 import bookmark from "./img/book.png"
+import SideBar from '../SideBar/SideBar';
 
 
 const Feed = () => {
@@ -14,7 +15,9 @@ const Feed = () => {
     };
 
     return (
+
         <div className="MainPage">
+                    <SideBar></SideBar>
             {/* {좌측배너} */}
             <div className="Banner">
             </div>
