@@ -7,6 +7,7 @@ import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import ModeCommentOutlinedIcon from '@mui/icons-material/ModeCommentOutlined';
 import BookmarkBorderOutlinedIcon from '@mui/icons-material/BookmarkBorderOutlined';
 import SentimentSatisfiedAltOutlinedIcon from '@mui/icons-material/SentimentSatisfiedAltOutlined';
+import { Link } from 'react-router-dom';
 
 const StyledProfileImage = styled.img`
     border-radius:50%;
@@ -32,8 +33,8 @@ function NickName({ NickName, className }) {
 function Header() {
     return (
         <div class="d-flex flex-row mb-3 mt-3">
-            <div className='me-3'><StyledProfileImage src={profile} alt='1'></StyledProfileImage></div>
-            <NickName NickName='ldk._.kdl' className='me-auto'></NickName>
+            <Link to='/'><div className='me-3'><StyledProfileImage src={profile} alt='1'></StyledProfileImage></div></Link>
+            <NickName NickName={<Link to='/' className='text-dark link-underline link-underline-opacity-0'>ldk._.kdl</Link>} className='me-auto'></NickName>
             <div><MoreHorizIcon /></div>
         </div>
     );
@@ -42,11 +43,11 @@ function Header() {
 function Comment() {
     return (
         <div class="d-flex flex-row mb-4 mt-3">
-            <div className='me-3'><StyledProfileImage src={profile} alt='1'></StyledProfileImage></div>
+            <div className='me-3'><Link to='/'><div className='me-3'><StyledProfileImage src={profile} alt='1'></StyledProfileImage></div></Link></div>
             <div className='me-auto'>
                 {/* 닉네임, 댓글 */}
                 <div>
-                    <NickName NickName='ldk._.kdl' className='me-3'></NickName>
+                    <NickName NickName={<Link to='/' className='text-dark link-underline link-underline-opacity-0'>ldk._.kdl</Link>} className='me-auto'></NickName>
                     <span>에에엥 왜 댓글이 두번 씩 써지지?에에엥 왜 댓글이 두번 씩 써지지?에에엥 왜 댓글이 두번 씩 써지지?에에엥 왜 댓글이 두번 씩 써지지?에에엥 왜 댓글이 두번 씩 써지지?</span>
                 </div>
                 {/* 댓글 시간, 답글 달기 */}
@@ -71,9 +72,9 @@ function Footer() {
             <hr style={{ width: '100%' }} />
             <div >
                 <div class="d-flex flex-row mb-3 mt-3">
-                <div className='me-3'><FavoriteBorderIcon/></div>
-                <div className='me-auto'><ModeCommentOutlinedIcon/></div>
-                <div><BookmarkBorderOutlinedIcon/></div>
+                    <div className='me-3'><FavoriteBorderIcon /></div>
+                    <div className='me-auto'><ModeCommentOutlinedIcon /></div>
+                    <div><BookmarkBorderOutlinedIcon /></div>
                 </div>
 
                 <div class="d-flex flex-row mb-3 mt-3">
@@ -81,9 +82,9 @@ function Footer() {
                 </div>
                 <hr style={{ width: '100%' }} />
                 <div class="d-flex flex-row mb-3 mt-3">
-                    <div><SentimentSatisfiedAltOutlinedIcon/></div>
-                    <div className='ms-1 me-1 flex-grow-1'><input type='text' style={{border:'0px', width:'100%'}}></input></div>
-                    <div style={{color:'skyblue'}}>게시</div>
+                    <div><SentimentSatisfiedAltOutlinedIcon /></div>
+                    <div className='ms-1 me-1 flex-grow-1'><input type='text' style={{ border: '0px', width: '100%' }}></input></div>
+                    <div style={{ color: 'skyblue' }}>게시</div>
                 </div>
             </div>
         </>
