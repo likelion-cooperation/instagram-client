@@ -3,13 +3,14 @@ import profile from '../Image/profile.jpg'
 import { styled } from 'styled-components';
 import '../Header/Header.js'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import FavoriteIcon from '@mui/icons-material/Favorite';
 import ModeCommentOutlinedIcon from '@mui/icons-material/ModeCommentOutlined';
 import BookmarkBorderOutlinedIcon from '@mui/icons-material/BookmarkBorderOutlined';
+import BookmarkIcon from '@mui/icons-material/Bookmark';
 import SentimentSatisfiedAltOutlinedIcon from '@mui/icons-material/SentimentSatisfiedAltOutlined';
 import { Link } from 'react-router-dom';
 import ArticleSetting from './ArticleSetting';
 import { useState } from 'react';
-import FavoriteIcon from '@mui/icons-material/Favorite';
 
 const StyledProfileImage = styled.img`
     border-radius:50%;
@@ -33,6 +34,20 @@ const StyledFavoriteIcon = styled(FavoriteIcon)`
     `;
 
 const StyledFavoriteBorderIcon = styled(FavoriteBorderIcon)`
+    &:hover{
+        cursor:pointer;
+    }
+
+`;
+
+const StyledBookmarkIcon = styled(BookmarkIcon)`
+    &:hover{
+        cursor:pointer;
+    }
+
+`;
+
+const StyledBookmarkBorderOutlinedIcon = styled(BookmarkBorderOutlinedIcon)`
     &:hover{
         cursor:pointer;
     }
@@ -91,14 +106,22 @@ function Comment() {
 };
 
 function Footer() {
+    const [isFavorite, setIsFavorite] = useState(false);
+    const FavoriteTrue = () => setIsFavorite(true);
+    const FavoriteFalse = () => setIsFavorite(false);
+
+    const [isMarked, setIsMarked] = useState(false);
+    const MakedTrue = () => setIsMarked(true);
+    const MakedFalse = () => setIsMarked(false);
+
     return (
         <>
             <hr style={{ width: '100%' }} />
             <div >
                 <div class="d-flex flex-row mb-3 mt-3">
-                    <div className='me-3'><FavoriteBorderIcon /></div>
+                    {isFavorite ? (<div className='me-3'><StyledFavoriteIcon onClick={FavoriteFalse}/></div>) : (<div className='me-3'><StyledFavoriteBorderIcon onClick={FavoriteTrue} /></div>)}
                     <div className='me-auto'><ModeCommentOutlinedIcon /></div>
-                    <div><BookmarkBorderOutlinedIcon /></div>
+                    {isMarked ? (<div><StyledBookmarkIcon onClick={MakedFalse} /></div>) : (<div><StyledBookmarkBorderOutlinedIcon onClick={MakedTrue} /></div>)}
                 </div>
 
                 <div class="d-flex flex-row mb-3 mt-3">
