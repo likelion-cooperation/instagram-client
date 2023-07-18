@@ -2,12 +2,12 @@ import React from 'react';
 import profile from '../Image/profile.jpg'
 import { styled } from 'styled-components';
 import '../Header/Header.js'
-import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import ModeCommentOutlinedIcon from '@mui/icons-material/ModeCommentOutlined';
 import BookmarkBorderOutlinedIcon from '@mui/icons-material/BookmarkBorderOutlined';
 import SentimentSatisfiedAltOutlinedIcon from '@mui/icons-material/SentimentSatisfiedAltOutlined';
 import { Link } from 'react-router-dom';
+import ArticleSetting from './ArticleSetting';
 
 const StyledProfileImage = styled.img`
     border-radius:50%;
@@ -35,7 +35,7 @@ function Header() {
         <div class="d-flex flex-row mb-3 mt-3">
             <Link to='/'><div className='me-3'><StyledProfileImage src={profile} alt='1'></StyledProfileImage></div></Link>
             <NickName NickName={<Link to='/' className='text-dark link-underline link-underline-opacity-0'>ldk._.kdl</Link>} className='me-auto'></NickName>
-            <div><MoreHorizIcon /></div>
+            <ArticleSetting></ArticleSetting>
         </div>
     );
 };
