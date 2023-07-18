@@ -8,6 +8,8 @@ import BookmarkBorderOutlinedIcon from '@mui/icons-material/BookmarkBorderOutlin
 import SentimentSatisfiedAltOutlinedIcon from '@mui/icons-material/SentimentSatisfiedAltOutlined';
 import { Link } from 'react-router-dom';
 import ArticleSetting from './ArticleSetting';
+import { useState } from 'react';
+import FavoriteIcon from '@mui/icons-material/Favorite';
 
 const StyledProfileImage = styled.img`
     border-radius:50%;
@@ -24,11 +26,25 @@ const StyledRipple = styled(StyledTime)`
     font-weight:bold;
 `;
 
+const StyledFavoriteIcon = styled(FavoriteIcon)`
+    &:hover{
+        cursor:pointer;
+    }
+    `;
+
+const StyledFavoriteBorderIcon = styled(FavoriteBorderIcon)`
+    &:hover{
+        cursor:pointer;
+    }
+
+`;
+
 function NickName({ NickName, className }) {
     return (
         <span className={className}>{NickName}</span>
     );
 }
+
 
 function Header() {
     return (
@@ -41,6 +57,10 @@ function Header() {
 };
 
 function Comment() {
+    const [isFavorite, setIsFavorite] = useState(false);
+    const FavoriteTrue = () => setIsFavorite(true);
+    const FavoriteFalse = () => setIsFavorite(false);
+
     return (
         <div class="d-flex flex-row mb-4 mt-3">
             <div className='me-3'><Link to='/'><div className='me-3'><StyledProfileImage src={profile} alt='1'></StyledProfileImage></div></Link></div>
@@ -61,7 +81,11 @@ function Comment() {
                     <StyledRipple>답글 보기</StyledRipple>
                 </div>
             </div>
-            <div><FavoriteBorderIcon /></div>
+            {isFavorite ?
+                (<div onClick={FavoriteFalse}><StyledFavoriteIcon /></div>) :
+                (<div onClick={FavoriteTrue}><StyledFavoriteBorderIcon /></div>)
+            }
+
         </div>
     );
 };
