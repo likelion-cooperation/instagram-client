@@ -52,8 +52,17 @@ const StyledBookmarkBorderOutlinedIcon = styled(BookmarkBorderOutlinedIcon)`
     &:hover{
         cursor:pointer;
     }
-
 `;
+
+const PostingButton = styled.input`
+    background-color:white;
+    border:0px;
+    color:skyblue;
+    &:hover{
+        color:blue;
+    }
+`;
+
 const StyledCommentOutlinedIcon = styled(ModeCommentOutlinedIcon)`
     &:hover{
         cursor:pointer;
@@ -131,21 +140,23 @@ function Footer() {
         <>
             <hr style={{ width: '100%' }} />
             <div >
-                <div class="d-flex flex-row mb-3 mt-3">
-                    {isFavorite ? (<div className='me-3'><StyledFavoriteIcon onClick={FavoriteFalse} /></div>) : (<div className='me-3'><StyledFavoriteBorderIcon onClick={FavoriteTrue} /></div>)}
-                    <div className='me-auto'><StyledCommentOutlinedIcon onClick={() => focusInput.current.focus()} /></div>
-                    {isMarked ? (<div><StyledBookmarkIcon onClick={MakedFalse} /></div>) : (<div><StyledBookmarkBorderOutlinedIcon onClick={MakedTrue} /></div>)}
-                </div>
+                <form>
+                    <div class="d-flex flex-row mb-3 mt-3">
+                        {isFavorite ? (<div className='me-3'><StyledFavoriteIcon onClick={FavoriteFalse} /></div>) : (<div className='me-3'><StyledFavoriteBorderIcon onClick={FavoriteTrue} /></div>)}
+                        <div className='me-auto'><StyledCommentOutlinedIcon onClick={() => focusInput.current.focus()} /></div>
+                        {isMarked ? (<div><StyledBookmarkIcon onClick={MakedFalse} /></div>) : (<div><StyledBookmarkBorderOutlinedIcon onClick={MakedTrue} /></div>)}
+                    </div>
 
-                <div class="d-flex flex-row mb-3 mt-3">
-                    <div>김 아무개 외 3명이 좋아합니다.</div>
-                </div>
-                <hr style={{ width: '100%' }} />
-                <div class="d-flex flex-row mb-3 mt-3">
-                    <div><SentimentSatisfiedAltOutlinedIcon /></div>
-                    <div className='ms-1 me-1 flex-grow-1'><input ref={focusInput} type='text' style={{ border: '0px', width: '100%' }}></input></div>
-                    <div style={{ color: 'skyblue' }}>게시</div>
-                </div>
+                    <div class="d-flex flex-row mb-3 mt-3">
+                        <div>김 아무개 외 3명이 좋아합니다.</div>
+                    </div>
+                    <hr style={{ width: '100%' }} />
+                    <div class="d-flex flex-row mb-3 mt-3">
+                        <div><SentimentSatisfiedAltOutlinedIcon /></div>
+                        <div className='ms-1 me-1 flex-grow-1'><input ref={focusInput} type='text' style={{ border: '0px', width: '100%' }}></input></div>
+                        <div><PostingButton type='submit' value='게시' /></div>
+                    </div>
+                </form>
             </div>
         </>
 
