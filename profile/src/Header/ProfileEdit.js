@@ -5,17 +5,18 @@ import TestProfileImage from './TestProfileImage.jpg';
 import profileImage from '../Image/profile.jpg'
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
+import SideBar from '../SideBar/SideBar'
 
 // StyledComponents & ServeComponents
 // StyledComponents
 // 그리드 컨테이너 스타일
 const GridContainer = styled.div`
-    width:800px;
-    height:1000px;
+    width:100%;
+    height:100%;
     border:1px solid gray;
-    margin-top:100px;
-    padding-top:100px;
-    padding-left:50px
+    margin-top:10%;
+    padding-top:5%;
+    padding-bottom:5%;
 `;
 
 /* 웹사이트 인풋 텍스트 스타일*/
@@ -82,16 +83,16 @@ const ChangeProfileModalItem = styled.div`
 function Radio({ children, value, name, defaultChecked, disabled, className }) {
     return (
         <div className={className}>
-        <label>
-            <input
-                type="radio"
-                value={value}
-                name={name}
-                defaultChecked={defaultChecked}
-                disabled={disabled}
-            />
-            {children}
-        </label>
+            <label>
+                <input
+                    type="radio"
+                    value={value}
+                    name={name}
+                    defaultChecked={defaultChecked}
+                    disabled={disabled}
+                />
+                {children}
+            </label>
         </div>
     );
 };
@@ -123,32 +124,32 @@ function Gender() {
     /* 렌더링 */
     return (
         <>
-            <div className='w-100 mb-2 border border-light-subtle' style={{height:'30px'}} onClick={handleOpen}>{selection}</div>
+            <div className='w-100 mb-2 border border-light-subtle' style={{ height: '30px' }} onClick={handleOpen}>{selection}</div>
 
             <Modal open={open} onClose={handleClose}>
                 <GenderModal>
-                <div className='text-center pt-3 fw-bold'>성별</div>
-                <hr className='w-100'/>
-                <div className='m-3'>
-                    <form onSubmit={(e) => {
-                        e.preventDefault();
-                        setSelection(e.target.contact.value);
-                        handleClose();
-                    }}>
-                        <Radio name="contact" value="직접 지정" defaultChecked>
-                            직접 지정
-                        </Radio><br/>
-                        <Radio name="contact" value="여성">
-                            여성
-                        </Radio><br/>
-                        <Radio name="contact" value="남성">
-                            남성
-                        </Radio><br/>
-                        <Radio name="contact" value="밝히고 싶지 않음" >
-                            밝히고 싶지 않음
-                        </Radio><br/>
-                        <GenderSubmitButton className='border-0 rounded bg-primary text-white w-100' type='submit' value='제출하기'></GenderSubmitButton>
-                    </form>
+                    <div className='text-center pt-3 fw-bold'>성별</div>
+                    <hr className='w-100' />
+                    <div className='m-3'>
+                        <form onSubmit={(e) => {
+                            e.preventDefault();
+                            setSelection(e.target.contact.value);
+                            handleClose();
+                        }}>
+                            <Radio name="contact" value="직접 지정" defaultChecked>
+                                직접 지정
+                            </Radio><br />
+                            <Radio name="contact" value="여성">
+                                여성
+                            </Radio><br />
+                            <Radio name="contact" value="남성">
+                                남성
+                            </Radio><br />
+                            <Radio name="contact" value="밝히고 싶지 않음" >
+                                밝히고 싶지 않음
+                            </Radio><br />
+                            <GenderSubmitButton className='border-0 rounded bg-primary text-white w-100' type='submit' value='제출하기'></GenderSubmitButton>
+                        </form>
                     </div>
                 </GenderModal>
             </Modal>
@@ -204,10 +205,10 @@ const ProfileEdit = () => {
         gender: [<Gender />, <ExplanationText>이 정보는 공개 프로필에 포함되지 않습니다.</ExplanationText>],
     };
 
-    /* Rendering */
+    /* 렌더링 */
     return (
         <>
-
+            <SideBar/>
             <GridContainer className='container'>
                 <div className='row'>
                     <div className='col-3 text-end ' style={{ fontSize: '30px', marginBottom: '50px' }}>프로필 편집</div>
