@@ -18,6 +18,32 @@ const GridContainer = styled.div`
     padding-left:50px
 `;
 
+/* 웹사이트 인풋 텍스트 스타일*/
+const WebSiteInput = styled.input`
+        background-color:#EFEFEF;
+        border:1px;
+        border-radius:5px;
+        height:40px;
+        font-size:20px;
+        margin-bottom:5px;
+        &:hover{
+            cursor: not-allowed;
+        }
+`;
+
+/* 설명 텍스트 스타일 */
+const ExplanationText = styled.div`
+    color:gray;
+    font-size: 15px;
+`;
+
+/* 소개 텍스트 박스 */
+const IntroductionInputArea = styled.textarea`
+        height:80px;
+`;
+
+
+//////////프로필 사진 바꾸기 모달
 /* 프로필 사진 바꾸기 텍스트 스타일*/
 const ChangeProfile = styled.span`
     color: #5295F6;
@@ -50,30 +76,87 @@ const ChangeProfileModalItem = styled.div`
     }
 `;
 
+////////// 성별 모달
 
-/* 웹사이트 인풋 텍스트 스타일*/
-const WebSiteInput = styled.input`
-        background-color:#EFEFEF;
-        border:1px;
-        border-radius:5px;
-        height:40px;
-        font-size:20px;
-        margin-bottom:5px;
-        &:hover{
-            cursor: not-allowed;
-        }
+/* 라디오 컴포넌트 */
+function Radio({ children, value, name, defaultChecked, disabled, className }) {
+    return (
+        <div className={className}>
+        <label>
+            <input
+                type="radio"
+                value={value}
+                name={name}
+                defaultChecked={defaultChecked}
+                disabled={disabled}
+            />
+            {children}
+        </label>
+        </div>
+    );
+};
+
+/* 전송 버튼 */
+const GenderSubmitButton = styled.input`
 `;
 
-/* 설명 텍스트 스타일 */
-const ExplanationText = styled.div`
-    color:gray;
-    font-size: 15px;
+/* 모달 박스 스타일 */
+const GenderModal = styled(Box)`
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width:30%;
+    background-color:white;
+    border-radius:15px;
 `;
 
-/* 소개 텍스트 박스 */
-const IntroductionInputArea = styled.textarea`
-        height:80px;
-`;
+/* 성별 모달 컴포넌트 */
+function Gender() {
+    /* 선택 값 state */
+    const [selection, setSelection] = useState();
+    /* 모달 열기/닫기 state */
+    const [open, setOpen] = React.useState(false);
+    const handleOpen = () => setOpen(true);
+    const handleClose = () => setOpen(false);
+
+    /* 렌더링 */
+    return (
+        <>
+            <div className='w-100 mb-2 border border-light-subtle' style={{height:'30px'}} onClick={handleOpen}>{selection}</div>
+
+            <Modal open={open} onClose={handleClose}>
+                <GenderModal>
+                <div className='text-center pt-3 fw-bold'>성별</div>
+                <hr className='w-100'/>
+                <div className='m-3'>
+                    <form onSubmit={(e) => {
+                        e.preventDefault();
+                        setSelection(e.target.contact.value);
+                        handleClose();
+                    }}>
+                        <Radio name="contact" value="직접 지정" defaultChecked>
+                            직접 지정
+                        </Radio><br/>
+                        <Radio name="contact" value="여성">
+                            여성
+                        </Radio><br/>
+                        <Radio name="contact" value="남성">
+                            남성
+                        </Radio><br/>
+                        <Radio name="contact" value="밝히고 싶지 않음" >
+                            밝히고 싶지 않음
+                        </Radio><br/>
+                        <GenderSubmitButton className='border-0 rounded bg-primary text-white w-100' type='submit' value='제출하기'></GenderSubmitButton>
+                    </form>
+                    </div>
+                </GenderModal>
+            </Modal>
+
+        </>
+    );
+};
+
 // End of Styled-components
 
 /* ServeComponents */
@@ -117,8 +200,8 @@ const ProfileEdit = () => {
     const contents = {
         changeImage: [<span>ldk._.kdl</span>, <br />, <ChangeProfileModal></ChangeProfileModal>],
         webSite: [<WebSiteInput className='w-100' type='text' placeholder='웹사이트' disabled></WebSiteInput>, <br />, <ExplanationText>링크 수정은 모바일에서만 가능합니다. Instagram 앱으로 이동하여 프로필의 소개에서 웹사이트를 변경하여 수정하세요.</ExplanationText>],
-        introduction: [<IntroductionInputArea className='w-100' onChange={onInputHandler} maxLength="150" ></IntroductionInputArea>, inputCount, '/150'],
-        gender: [<input className='w-100' type='text' value='남성'></input>, <ExplanationText>이 정보는 공개 프로필에 포함되지 않습니다.</ExplanationText>],
+        introduction: [<IntroductionInputArea className='w-100 border border-light-subtle' onChange={onInputHandler} maxLength="150" ></IntroductionInputArea>, inputCount, '/150'],
+        gender: [<Gender />, <ExplanationText>이 정보는 공개 프로필에 포함되지 않습니다.</ExplanationText>],
     };
 
     /* Rendering */
