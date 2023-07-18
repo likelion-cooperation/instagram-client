@@ -11,6 +11,7 @@ import SentimentSatisfiedAltOutlinedIcon from '@mui/icons-material/SentimentSati
 import { Link } from 'react-router-dom';
 import ArticleSetting from './ArticleSetting';
 import { useState } from 'react';
+import { useRef } from 'react';
 
 const StyledProfileImage = styled.img`
     border-radius:50%;
@@ -53,6 +54,13 @@ const StyledBookmarkBorderOutlinedIcon = styled(BookmarkBorderOutlinedIcon)`
     }
 
 `;
+const StyledCommentOutlinedIcon = styled(ModeCommentOutlinedIcon)`
+    &:hover{
+        cursor:pointer;
+    }
+
+`;
+
 
 function NickName({ NickName, className }) {
     return (
@@ -106,21 +114,26 @@ function Comment() {
 };
 
 function Footer() {
+    // 좋아요 아이콘 클릭 state
     const [isFavorite, setIsFavorite] = useState(false);
     const FavoriteTrue = () => setIsFavorite(true);
     const FavoriteFalse = () => setIsFavorite(false);
 
+    // 북마크 아이콘 클릭 state
     const [isMarked, setIsMarked] = useState(false);
     const MakedTrue = () => setIsMarked(true);
     const MakedFalse = () => setIsMarked(false);
+
+    // 코멘트 아이콘 클릭 시 input text로 포커스 변경
+    const focusInput = useRef(null);
 
     return (
         <>
             <hr style={{ width: '100%' }} />
             <div >
                 <div class="d-flex flex-row mb-3 mt-3">
-                    {isFavorite ? (<div className='me-3'><StyledFavoriteIcon onClick={FavoriteFalse}/></div>) : (<div className='me-3'><StyledFavoriteBorderIcon onClick={FavoriteTrue} /></div>)}
-                    <div className='me-auto'><ModeCommentOutlinedIcon /></div>
+                    {isFavorite ? (<div className='me-3'><StyledFavoriteIcon onClick={FavoriteFalse} /></div>) : (<div className='me-3'><StyledFavoriteBorderIcon onClick={FavoriteTrue} /></div>)}
+                    <div className='me-auto'><StyledCommentOutlinedIcon onClick={() => focusInput.current.focus()} /></div>
                     {isMarked ? (<div><StyledBookmarkIcon onClick={MakedFalse} /></div>) : (<div><StyledBookmarkBorderOutlinedIcon onClick={MakedTrue} /></div>)}
                 </div>
 
@@ -130,7 +143,7 @@ function Footer() {
                 <hr style={{ width: '100%' }} />
                 <div class="d-flex flex-row mb-3 mt-3">
                     <div><SentimentSatisfiedAltOutlinedIcon /></div>
-                    <div className='ms-1 me-1 flex-grow-1'><input type='text' style={{ border: '0px', width: '100%' }}></input></div>
+                    <div className='ms-1 me-1 flex-grow-1'><input ref={focusInput} type='text' style={{ border: '0px', width: '100%' }}></input></div>
                     <div style={{ color: 'skyblue' }}>게시</div>
                 </div>
             </div>
