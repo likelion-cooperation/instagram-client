@@ -70,6 +70,13 @@ const StyledCommentOutlinedIcon = styled(ModeCommentOutlinedIcon)`
 
 `;
 
+const StyledCommentContainer = styled.div`
+    height:65%;
+    overflow:auto;
+    &::-webkit-scrollbar{
+        display: none;
+    }
+`;
 
 function NickName({ NickName, className }) {
     return (
@@ -168,8 +175,12 @@ const InArticleComment = () => {
         <>
             <Header></Header>
             <hr style={{ width: '100%' }} />
+            <StyledCommentContainer>
             <Comment></Comment>
             <Comment></Comment>
+            <Comment></Comment>
+            <Comment></Comment>
+            </StyledCommentContainer>
             <Footer></Footer>
         </>
     );
