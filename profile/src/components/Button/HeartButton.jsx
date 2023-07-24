@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import IMAGE_HEART_EMPTY from "./img/heart_empty.png"
-import IMAGE_HEART_FILLED from "./img/heart_filled.png"
+import IMAGE_HEART_EMPTY from "../../assets/heart_empty.png"
+import IMAGE_HEART_FILLED from "../../assets/heart_filled.png"
 import "./HeartButton.css"
 
 function HeartButton({ label, onChange }) {

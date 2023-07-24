@@ -59,7 +59,7 @@ export default function SideBar() {
                                         {index === 0 && <Link to='/Feed'><InstagramIcon style={{color:'black'}}/></Link>}
                                         {index === 1 && <Link to='/Feed'><HomeIcon style={{color:'black'}}/></Link>}
                                         {index === 2 && <AddArticle />}
-                                        {index === 3 && <Link to='/'><StyledImage src={TestProfileImage} /></Link>}
+                                        {index === 3 && <Link to='/Profile'><StyledImage src={TestProfileImage} /></Link>}
     
                                     </ListItemIcon>
                                     <ListItemText primary={text} />

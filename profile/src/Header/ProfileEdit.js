@@ -6,6 +6,7 @@ import profileImage from '../Image/profile.jpg'
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import SideBar from '../SideBar/SideBar'
+import { Button } from '@mui/material';
 
 // StyledComponents & ServeComponents
 // StyledComponents
@@ -100,6 +101,10 @@ function Radio({ children, value, name, defaultChecked, disabled, className }) {
 /* 전송 버튼 */
 const GenderSubmitButton = styled.input`
 `;
+
+const SubmitButton = styled(Button)(({ theme }) => ({
+    backgroundColor:'#535AFF',
+  }));
 
 /* 모달 박스 스타일 */
 const GenderModal = styled(Box)`
@@ -218,6 +223,7 @@ const ProfileEdit = () => {
                 <ItemContainer name='웹사이트' content={contents.webSite}></ItemContainer>
                 <ItemContainer name='소개' content={contents.introduction}></ItemContainer>
                 <ItemContainer name='성별' content={contents.gender}></ItemContainer>
+                <div><SubmitButton>제출</SubmitButton></div>
             </GridContainer>
         </>
     );
