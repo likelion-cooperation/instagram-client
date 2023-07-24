@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import styled from 'styled-components';
+// import styled from 'styled-components';
+import styled from '@emotion/styled';
 import ItemContainer from './ItemContainer';
 import TestProfileImage from './TestProfileImage.jpg';
 import profileImage from '../Image/profile.jpg'
@@ -103,7 +104,11 @@ const GenderSubmitButton = styled.input`
 `;
 
 const SubmitButton = styled(Button)(({ theme }) => ({
-    backgroundColor:'#535AFF',
+    backgroundColor:'#6194F7',
+    color:'white',
+    ":hover":{
+        backgroundColor:'#535AFF',
+    }
   }));
 
 /* 모달 박스 스타일 */
