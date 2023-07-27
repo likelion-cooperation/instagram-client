@@ -5,6 +5,7 @@ import TextIcon from '../Image/TextIcon.png'
 import FacebookIcon from '@mui/icons-material/Facebook';
 import GooglePlay from '../Image/GooglePlay.png'
 import Microsoft from '../Image/Microsoft.png'
+import { Link } from 'react-router-dom';
 
 
 const SytledPhone = styled.img`
@@ -38,6 +39,7 @@ const HoverSpan = styled.span`
     color:#4CB5F9;
     &:hover{
         cursor:pointer;
+        color:blue;
     }
 `;
 
@@ -76,6 +78,10 @@ const StyledInputButton = styled(StyledInput)`
     font-weight:bold;
     font-size:15px;
     padding:0px;
+    &:hover{
+        cursor:pointer;
+        background-color:blue;
+    }
 `;
 
 const DownloadContainer = styled.div`
@@ -125,7 +131,7 @@ const SignUp = () => {
                             <StyledInputButton type='submit' value='가입'></StyledInputButton>
                         </form>
                     </InputContainer>
-                    <FooterContainer className='mb-3'>계정이 있으신가요? <HoverSpan>로그인</HoverSpan></FooterContainer>
+                    <FooterContainer className='mb-3'>계정이 있으신가요? <Link to='/Login' style={{ textDecoration: "none" }}><HoverSpan>로그인</HoverSpan></Link></FooterContainer>
                     <div className='mb-3' style={{ fontSize: '12px' }}>앱을 다운로드하세요.</div>
                     <DownloadContainer className='d-flex'><DownloadIcon className='me-2' src={GooglePlay} /><DownloadIcon src={Microsoft} /></DownloadContainer>
                 </div>
