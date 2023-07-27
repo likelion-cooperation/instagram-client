@@ -1,7 +1,7 @@
 import React from 'react';
-import profile from '../Image/profile.jpg'
+import profile from '../../Image/profile.jpg'
 import { styled } from 'styled-components';
-import '../../Header/Header.js'
+import '../Header/Header.js'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import ModeCommentOutlinedIcon from '@mui/icons-material/ModeCommentOutlined';

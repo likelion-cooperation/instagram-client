@@ -3,10 +3,10 @@ import React, { useState } from 'react';
 import styled from '@emotion/styled';
 import ItemContainer from './ItemContainer';
 import TestProfileImage from './TestProfileImage.jpg';
-import profileImage from '../Image/profile.jpg'
+import profileImage from '../../Image/profile.jpg'
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
-import SideBar from '../SideBar/SideBar'
+import SideBar from '../../SideBar/SideBar';
 import { Button } from '@mui/material';
 
 // StyledComponents & ServeComponents

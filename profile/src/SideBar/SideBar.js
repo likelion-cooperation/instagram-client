@@ -12,7 +12,7 @@ import ListItemText from '@mui/material/ListItemText';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import HomeIcon from '@mui/icons-material/Home';
 import styled from 'styled-components';
-import TestProfileImage from '../Header/TestProfileImage.jpg'
+import TestProfileImage from '../Profile/Header/TestProfileImage.jpg'
 import AddArticle from './AddArticle';
 import { Link } from 'react-router-dom';
 
