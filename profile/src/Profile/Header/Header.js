@@ -1,20 +1,10 @@
 import React from 'react';
-import TestProfileImage from './TestProfileImage.jpg';
 import './Header.css';
 import SettingModal from './SettingModal'
 import { Link } from 'react-router-dom';
 
 
-const Header = () => {
-  const User = {
-    NickName: 'ldk._.kdl',
-    ArticleCount: '29',
-    FollowersCount: '152',
-    FollowsCount: '212',
-    Name: '이동규',
-    Link: 'https://sooncoding.tistory.com/m/',
-  };
-
+const Header = ({imgUrl, nickName, postCount, followerCount, followCount, name, introduceText}) => {
   return (
     <>
     {/* 헤더 컨테이너 */}
@@ -24,7 +14,7 @@ const Header = () => {
           {/* 1행 1열(프로필 이미지) */}
           <div className="col-4">
             <div className="row justify-content-center">
-              <img className="profileImage p-0" src={TestProfileImage} alt="ProfileImage" />
+              <img className="profileImage p-0" src={imgUrl} alt="ProfileImage" />
             </div>
           </div>
           {/* 1행 2열 */}
@@ -33,7 +23,7 @@ const Header = () => {
             <div className="row justify-content-start">
               {/* 닉네임 */}
               <div className="col-3 fs-5 align-self-center" style={{ marginTop: '10px' }}>
-                {User.NickName}
+                {nickName}
               </div>
               {/* 프로필 편집 */}
               <div className="col-3 align-self-center" style={{ paddingLeft: '0px', marginTop: '10px' }}>
@@ -48,20 +38,20 @@ const Header = () => {
               {/* 게시물, 팔로워, 팔로우 수 */}
               <div className="w-100"></div>
               <div className="col-3">
-                게시물 <span className="fw-semibold">{User.ArticleCount}</span>
+                게시물 <span className="fw-semibold">{postCount}</span>
               </div>
               <div className="col-3">
-                팔로워 <span className="fw-semibold">{User.FollowersCount}</span>
+                팔로워 <span className="fw-semibold">{followerCount}</span>
               </div>
               <div className="col-3">
-                팔로우 <span className="fw-semibold">{User.FollowsCount}</span>
+                팔로우 <span className="fw-semibold">{followCount}</span>
               </div>
               {/* 이름, 소개글 */}
               <div className="w-100"></div>
               <div className="col">
-                <span className="fw-semibold">{User.Name}</span>
+                <span className="fw-semibold">{name}</span>
                 <br />
-                <a href={User.Link} target="_blank" rel="noopener noreferrer">
+                <a href={introduceText} target="_blank" rel="noopener noreferrer">
                   sooncoding.tistory.com
                 </a>
               </div>
