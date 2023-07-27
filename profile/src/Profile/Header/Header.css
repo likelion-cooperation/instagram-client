@@ -10,9 +10,12 @@
 }
 
 .editButton {
-    background-color: rgb(240, 240, 240);
+    background-color: lightgray;
     border: 0px;
     border-radius: 5px;
+    width:100px;
+    text-align:center;
+    padding:5px;
 }
 
 .editButton:hover {
