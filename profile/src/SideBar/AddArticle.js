@@ -24,7 +24,7 @@ const Header = styled.div`
     font-weight:bold;
 `;
 
-const StyledButton = styled.button`
+const FileSubmitButton = styled.label`
     color:white;
     background-color: #0095F6;
     border:0px;
@@ -32,16 +32,21 @@ const StyledButton = styled.button`
     padding:5px;
     padding-left:10px;
     padding-right:10px;
-    font-size:12px;
+    font-size:20px;
     font-weight:bold;
+    &:hover{
+        cursor:pointer;
+    }
 `;
+
+
 
 function Body() {
     return (
         <div className='align-middle' style={{marginTop:'20%'}}>
             <div className='mb-3'><img src={SelectImage} alt='' /></div>
             <div className='mb-3 fs-5'>사진과 동영상을 여기다 끌어다 놓으세요</div>
-            <div className='mb-3 fs-6'><StyledButton>컴퓨터에서 선택</StyledButton></div>
+            <div className='mb-3 fs-6'><form><FileSubmitButton for="fileInput">컴퓨터에서 선택</FileSubmitButton><input type="file" id="fileInput" name="fileInput"  style={{display:'none'}}/></form></div>
         </div>
     );
 };
