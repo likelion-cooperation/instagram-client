@@ -4,6 +4,7 @@ import useInput from "../../components/Input/UseInput";
 import insta from "../../assets/insta.png"
 import facebook from "../../assets/facebook.png"
 import "./login.css"
+import { Link } from 'react-router-dom';
 
 function Login() {
 
@@ -68,7 +69,7 @@ function Login() {
                 <div className="container_wrap">
                     <ul>
                         <li>계정이 없으신가요?</li>
-                        <li className="signUp">가입하기</li>
+                        <li className="signUp"><Link to="/SignUp" style={{ textDecoration: "none" }}>가입하기</Link></li>
                     </ul>
                 </div>
                 <div className="'app">
