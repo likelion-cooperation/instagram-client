@@ -3,7 +3,7 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 export const RightBody = styled.div`
   position: fixed;
-  left: 984px;
+  left: 75%;
   padding:30px 0;
   width:319px;
   height:657px;
