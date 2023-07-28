@@ -4,7 +4,7 @@ import ProfileEdit from './Profile/Header/ProfileEdit';
 import SignUp from './SignUp/SignUp'
 import { Route, Routes } from 'react-router-dom';
 import Feed from './Pages/Feed/Feed';
-import Login from './Login/login';
+import Login from './Pages/Login/login';
 
 
 function App() {
