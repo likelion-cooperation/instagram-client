@@ -14,7 +14,7 @@ import {
     CommentButton,
     CommentInput,
     DirectButton,
-    FeedCommnet,
+    FeedComment,
     FeedContainer,
     FeedImage,
     FeedItem,
@@ -28,7 +28,9 @@ import {
     UserNameContainer,
     PlusComment
 } from './style';
-//import SideBar from './../LeftBody/SideBar/SideBar'
+import { Link } from 'react-router-dom';
+import ModalComponent from "../../../components/Modal/Modal"
+
 
 const InstagramFeed = () => {
     const [feed, setFeed] = useState([
@@ -73,16 +75,12 @@ const InstagramFeed = () => {
                         <User>
                             <Profileimg $test={Test} />
                             <UserInfo>
-                                <a>{post.id}</a>
+                                <Link to="/Profile" style={{ textDecoration: "none", color: 'black' }}>{post.id}</Link>
                                 <span>• 12시간</span>
                             </UserInfo>
                         </User>
                         <Plus>
-                            <svg aria-label="옵션 더 보기" className="_ab6-" color="rgb(0, 0, 0)" fill="rgb(0, 0, 0)" height="24" role="img" viewBox="0 0 24 24" width="24">
-                                <circle cx="12" cy="12" r="1.5"></circle>
-                                <circle cx="6" cy="12" r="1.5"></circle>
-                                <circle cx="18" cy="12" r="1.5"></circle>
-                            </svg>
+                            <ModalComponent />
                         </Plus>
                     </UserNameContainer>
                     <FeedImage>
@@ -106,10 +104,10 @@ const InstagramFeed = () => {
                         <ProfileAnchor />
                         <span><b>User_1</b>님 <b>외 123명이</b> 좋아합니다</span>
                     </HeartLine>
-                    <FeedCommnet>
+                    <FeedComment>
                         <a>{post.id}</a>
                         <span>얏호</span>
-                    </FeedCommnet>
+                    </FeedComment>
                     <Comment>
                         {post.comments
                             .slice(0)
