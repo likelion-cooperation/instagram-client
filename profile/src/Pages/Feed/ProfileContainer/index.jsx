@@ -11,6 +11,7 @@ import {
     Follow
 } from "./style"
 import Test from "../../../assets/icon.png"
+import { Link } from 'react-router-dom';
 
 const usersData = [
     {
@@ -43,9 +44,9 @@ function ProfileContainer() {
     return (
         <RightBody>
             <Profile>
-                <ProfileImg $test={Test} />
+                <ProfileImg $test={Test}><Link to="/Profile" style={{ textDecoration: "none", color: 'black' }}></Link></ProfileImg>
                 <User>
-                    <a href="/your-link">MainUser</a>
+                    <Link to="/Profile" style={{ textDecoration: "none", color: 'black' }}>MainUser</Link>
                     <span>유저이름</span>
                 </User>
             </Profile>
