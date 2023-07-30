@@ -5,6 +5,7 @@ import insta from "../../assets/insta.png"
 import facebook from "../../assets/facebook.png"
 import "./login.css"
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 function Login() {
 
@@ -13,9 +14,27 @@ function Login() {
 
     const submitHandler = (event) => {
         event.preventDefault();
+        
+        axios.post('/api/user/login', {
+        loginId: userId,
+        password: password,
+        })
+        .then((response) => {
+        // 서버로부터 받은 사용자 정보를 처리하는 로직
+        const userInfo = response.data; // 서버에서 받은 사용자 정보
+
+        // 로그인 성공 시 사용자 정보를 화면에 출력하거나 Redux 상태에 저장하는 등의 로직
+        })
+        .catch((error) => {
+        console.log(error);
+        alert('입력하신 정보를 확인해주세요.');
+        });
+
         resetId();
         resetPw();
-    }
+    };
+
+    
 
     return (
         <div id="mainContainer">
@@ -36,7 +55,7 @@ function Login() {
                                             className="userId"
                                             type="text"
                                             value={userId}
-                                            onChange={setId}
+                                            onChange={(e) => setId(e.target.value)}
                                             placeholder="전화번호,사용자 이름 또는 이메일"
                                         />
                                     </label>
@@ -48,12 +67,12 @@ function Login() {
                                         className="userPw"
                                         type="password"
                                         value={password}
-                                        onChange={setPw}
+                                        onChange={(e) => setPw(e.target.value)}
                                         placeholder="비밀번호"
                                     />
                                 </div>
                             </div>
-                            <button className="loginBtn" type="submit">로그인</button>
+                            <button className="loginBtn" type="submit" onClick={submitHandler}>로그인</button>
                         </form>
                         <div className="text">――――――――</div>
                         <div className="text">또는</div>

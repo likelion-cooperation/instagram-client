@@ -112,7 +112,7 @@ input {
     vertical-align: baseline;
 } */
 
-button {
+.button {
     background-color: rgba(0, 149, 246);
     opacity: .7;
     pointer-events: none;
